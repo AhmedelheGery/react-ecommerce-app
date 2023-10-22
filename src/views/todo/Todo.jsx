@@ -5,26 +5,14 @@ import TodoList from "../../components/todo_form/List";
 import "./Todo.css";
 
 function Todo() {
-  const [todos, setTodos] = useState([
-    {
-      title: "learn node js",
-      content: "Lorem ipsum dolor sit amet.",
-    },
-    {
-      title: "go to the sea",
-      content: "Lorem ipsum dolor sit amet.",
-    },
-    {
-      title: "walk the dog",
-      content: "Lorem ipsum dolor sit amet.",
-    },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const addTodo = (task) => {
     setTodos([...todos, task]);
   };
 
   const deleteTodo = (index) => {
+    console.log('deleteTodo')
     setTodos(todos.filter((todo, i) => i !== index));
   };
 

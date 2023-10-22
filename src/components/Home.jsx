@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
 import myImg from "../assets/images/Me.jpg";
 
 const Home = () => {
+
+  const counterGlobalState = useSelector( store => store.counterReducer.counter );
+
   const style = {
     borderRadius: "50%",
   };
@@ -16,6 +20,10 @@ const Home = () => {
         <div className="col-12 col-md-6">
           <img style={style} className="w-75" src={myImg} alt="profile" />
         </div>
+      </div>
+
+      <div>
+        <h1>Total price is : {counterGlobalState}</h1>
       </div>
     </div>
   );
